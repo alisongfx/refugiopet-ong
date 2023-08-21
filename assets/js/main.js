@@ -13,6 +13,19 @@ window.addEventListener('scroll', () => {
     }
 });
 
+    (async() => {
+        const response = await fetch("http://instagram-json-refugio.vercel.app/api/get-json");
+        const data = await response.json();
+        
+        const list = data.map(({src}) => `
+        <swiper-slide>
+            <img src=${src}/>
+        </swiper-slide>
+        `).join('');
+
+        document.querySelector('.mySwiper').innerHTML = list;
+})();
+
 hamburguer.addEventListener('click', () => {
     hamburguer.classList.toggle('active');
     navMenu.classList.toggle('active');
