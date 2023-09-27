@@ -1,8 +1,42 @@
 const hamburguer = document.querySelector('.hamburguer');
 const navMenu = document.querySelector('.nav-menu');
 const nav = document.querySelector('nav');
+const arrowToTop = document.querySelector('.button-to-top');
 const bg = document.querySelector('.bg');
+const boxCarrossel = document.getElementById('carroselImgs');
+const imgFullscreen = document.querySelector('.img-fullscreen');
+const imgs = document.querySelectorAll('.image-carrossel img');
+const imgsEach = document.querySelector('.image-carrossel img');
+const modalImg = document.getElementById('modal');
+const modalToggle = document.getElementById('modaltoggle');
+
 window.sr = ScrollReveal({ reset: true });
+
+
+function closeModal() {
+    const modalBtnClose = document.getElementById('closeModal');
+    modalBtnClose.addEventListener('click', () => {
+        modalImg.close();
+
+        if(modalToggle.classList.contains('show')){
+            modalToggle.classList.remove('show')
+            modalToggle.classList.add('hidden')
+        }
+
+    })
+}
+imgs.forEach((imgsEach) => imgsEach.addEventListener('click', () => {
+    const src = imgsEach.getAttribute('src')    
+    document.querySelector('.img-fullscreen').setAttribute('src', src) 
+
+    modalImg.showModal();
+    if(modalToggle.classList.contains('hidden')){
+        modalToggle.classList.remove('hidden')
+        modalToggle.classList.add('show')
+    }
+    closeModal();
+
+}))
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
@@ -11,20 +45,28 @@ window.addEventListener('scroll', () => {
         nav.style = ''
         nav.removeAttribute("style");
     }
+
+    if (window.scrollY > 100) {
+        arrowToTop.style.position = 'fixed'      // Execute a ação desejada aqui  // Execute a ação desejada aqui
+    } else {
+        arrowToTop.style = ''
+        arrowToTop.removeAttribute("style");
+    }
 });
 
-    (async() => {
-        const response = await fetch("http://instagram-json-refugio.vercel.app/api/get-json");
-        const data = await response.json();
-        
-        const list = data.map(({src}) => `
-        <swiper-slide>
-            <img src=${src}/>
-        </swiper-slide>
-        `).join('');
-
-        document.querySelector('.mySwiper').innerHTML = list;
-})();
+const swiper = new Swiper('.swiper', {
+    spaceBetween: 30,
+    cssMode: true,
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    keyboard: true,
+});
 
 hamburguer.addEventListener('click', () => {
     hamburguer.classList.toggle('active');
@@ -77,4 +119,28 @@ ScrollReveal({ distance: '100px' }).reveal('.img-sobre', {
     duration: 2000,
     rotate: { x: 0, y: 0, z: 0 },
     origin: 'left'
+});
+
+ScrollReveal({ distance: '100px' }).reveal('.title-content', {
+    duration: 2000,
+    rotate: { x: 0, y: 0, z: 0 },
+    origin: 'top'
+});
+
+ScrollReveal({ distance: '70px' }).reveal('.btn-instagram', {
+    duration: 2000,
+    rotate: { x: 0, y: 0, z: 0 },
+    origin: 'bottom'
+});
+
+ScrollReveal({ distance: '70px' }).reveal('.btn-facebook', {
+    duration: 3000,
+    rotate: { x: 0, y: 0, z: 0 },
+    origin: 'bottom'
+});
+
+ScrollReveal({ distance: '70px' }).reveal('.btn-whatsapp', {
+    duration: 4000,
+    rotate: { x: 0, y: 0, z: 0 },
+    origin: 'bottom'
 });
