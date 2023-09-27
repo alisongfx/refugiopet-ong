@@ -12,6 +12,9 @@ const modalToggle = document.getElementById('modaltoggle');
 
 window.sr = ScrollReveal({ reset: true });
 
+function init(){
+    scrollEvents();
+}
 
 function closeModal() {
     const modalBtnClose = document.getElementById('closeModal');
@@ -25,6 +28,7 @@ function closeModal() {
 
     })
 }
+
 imgs.forEach((imgsEach) => imgsEach.addEventListener('click', () => {
     const src = imgsEach.getAttribute('src')    
     document.querySelector('.img-fullscreen').setAttribute('src', src) 
@@ -73,74 +77,78 @@ hamburguer.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 })
 
-sr.reveal('.cat-image', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    distance: '-30px',
-});
+function scrollEvents(){
+    sr.reveal('.cat-image', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        distance: '-30px',
+    });
+    
+    sr.reveal('.text-content', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        distance: '-30px',
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.redes-sociais', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'bottom'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.pay', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'top'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.sobre-info', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'bottom'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.imgphoto > img', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'left'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.imgphotobanner > img', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'right'
+    });
+    
+    ScrollReveal({ distance: '100px' }).reveal('.img-sobre', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'left'
+    });
+    
+    ScrollReveal({ distance: '100px' }).reveal('.title-content', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'top'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.btn-instagram', {
+        duration: 2000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'bottom'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.btn-facebook', {
+        duration: 3000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'bottom'
+    });
+    
+    ScrollReveal({ distance: '70px' }).reveal('.btn-whatsapp', {
+        duration: 4000,
+        rotate: { x: 0, y: 0, z: 0 },
+        origin: 'bottom'
+    });
+}
 
-sr.reveal('.text-content', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    distance: '-30px',
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.redes-sociais', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'bottom'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.pay', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'top'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.sobre-info', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'bottom'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.imgphoto > img', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'left'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.imgphotobanner > img', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'right'
-});
-
-ScrollReveal({ distance: '100px' }).reveal('.img-sobre', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'left'
-});
-
-ScrollReveal({ distance: '100px' }).reveal('.title-content', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'top'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.btn-instagram', {
-    duration: 2000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'bottom'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.btn-facebook', {
-    duration: 3000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'bottom'
-});
-
-ScrollReveal({ distance: '70px' }).reveal('.btn-whatsapp', {
-    duration: 4000,
-    rotate: { x: 0, y: 0, z: 0 },
-    origin: 'bottom'
-});
+init()
