@@ -29,19 +29,19 @@ a {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 2.6rem;
 }
 
 h2 {
-    font-size: 2.7rem;
-}
-
-h4 {
     font-size: 2.3rem;
 }
 
+h4 {
+    font-size: 2.1rem;
+}
+
 p {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 ::selection {
@@ -110,7 +110,7 @@ nav .nav-head {
 }
 
 nav .nav-head img {
-    width: 300px;
+    width: 230px;
 }
 
 nav .nav-head ul {
@@ -362,7 +362,7 @@ nav .nav-head ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 35vh;
     gap: 5%;
 }
 
@@ -444,8 +444,8 @@ nav .nav-head ul li a:hover {
 
 .image-carrossel img {
     cursor: pointer;
-    width: 700px;
-    height: 700px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     transition: 0.3s all ease-in-out;
 }
@@ -700,15 +700,15 @@ nav .nav-head ul li a:hover {
 @media (max-width: 1500px) {
 
     a {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     h4 {
@@ -716,7 +716,7 @@ nav .nav-head ul li a:hover {
     }
 
     p {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .text-content {
@@ -728,7 +728,7 @@ nav .nav-head ul li a:hover {
     }
 
     .nav-head img {
-        width: 180px !important;
+        width: 160px !important;
     }
 
     .swiper {
@@ -769,6 +769,11 @@ nav .nav-head ul li a:hover {
     .button-to-top button img{
         width: 45px;
     }
+
+    .content-more-wrap img {
+        width: 30px;
+    }
+
 }
 
 @media (max-width: 1040px) {
