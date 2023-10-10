@@ -392,6 +392,7 @@ nav .nav-head ul li a:hover {
     flex-direction: column;
     width: 27%;
     gap: 20px;
+    padding: 27px;
 }
 
 .hamburguer {
